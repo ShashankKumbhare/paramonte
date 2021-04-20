@@ -2,7 +2,7 @@
 ####################################################################################################################################
 ####################################################################################################################################
 #' @title My Hello World function
-#' @description This function simply prints **Hello World**.
+#' @description This function simply prints **Hello World**
 #' @param x some name
 #' @return The output from [`print`]
 #' @examples

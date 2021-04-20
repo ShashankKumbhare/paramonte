@@ -2,7 +2,7 @@
 ####################################################################################################################################
 ####################################################################################################################################
 #' @title My printsum function
-#' @description This function simply prints sum 2 numbers.
+#' @description This function simply prints sum 2 numbers
 #' @param x a number
 #' @param y a number
 #' @import ggplot2
