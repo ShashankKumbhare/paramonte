@@ -4,6 +4,10 @@
 # paramonte
 
 <!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.com/ShashankKumbhare/paramonteR.svg?branch=master)](https://travis-ci.com/ShashankKumbhare/paramonteR)
+[![R-CMD-check](https://github.com/ShashankKumbhare/paramonteR/workflows/R-CMD-check/badge.svg)](https://github.com/ShashankKumbhare/paramonteR/actions)
 <!-- badges: end -->
 
 ParaMonte is a serial / parallel library of Monte Carlo routines for
