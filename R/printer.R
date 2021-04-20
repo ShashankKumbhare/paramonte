@@ -2,7 +2,7 @@
 ####################################################################################################################################
 ####################################################################################################################################
 #' @title printsum function
-#' @description This function simply prints sum of x and y
+#' @description This function simply prints sum 2 numbers.
 #' @param x a number
 #' @param y a number
 #' @return returns sum of x and y
