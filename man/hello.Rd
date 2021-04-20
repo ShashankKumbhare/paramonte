@@ -13,7 +13,7 @@ hello(x)
 The output from \code{\link{print}}
 }
 \description{
-This function simply prints \strong{Hello World}.
+This function simply prints \strong{Hello World}
 }
 \examples{
 hello("Shashank")
