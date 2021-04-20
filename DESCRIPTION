@@ -17,6 +17,7 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/ShashankKumbhare/paramonteR
 BugReports: https://github.com/ShashankKumbhare/paramonteR/issues
 Suggests: 
+    covr,
     knitr,
     rmarkdown
 VignetteBuilder: knitr

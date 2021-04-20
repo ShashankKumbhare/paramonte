@@ -9,6 +9,8 @@
 status](https://travis-ci.com/ShashankKumbhare/paramonteR.svg?branch=master)](https://travis-ci.com/ShashankKumbhare/paramonteR)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/ShashankKumbhare/paramonteR?branch=master&svg=true)](https://ci.appveyor.com/project/ShashankKumbhare/paramonteR)
+[![Codecov test
+coverage](https://codecov.io/gh/ShashankKumbhare/paramonteR/branch/master/graph/badge.svg)](https://codecov.io/gh/ShashankKumbhare/paramonteR?branch=master)
 <!-- badges: end -->
 
 ParaMonte is a serial / parallel library of Monte Carlo routines for
