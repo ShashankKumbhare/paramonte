@@ -5,9 +5,10 @@
 #' @description This function simply prints sum 2 numbers.
 #' @param x a number
 #' @param y a number
+#' @import ggplot2
 #' @return returns sum of x and y
 #' @examples
-#' printsum(1, 2)
+#' sum(1, 2)
 #' \dontrun{
 #' printsum(4, 5)
 #' }
@@ -20,6 +21,7 @@
 ################################## hello ###########################################################################################
 printsum <- function(x, y) {
     print( paste0("x + y = ", x + y) )
+    ggplot() + geom_rect(aes(xmin=-1,ymin=-1,xmax=1,ymax=1), fill=NA) + coord_polar()
 }
 ################################## hello ###########################################################################################
 ####################################################################################################################################

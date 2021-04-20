@@ -2,3 +2,4 @@
 
 export(hello)
 export(printsum)
+import(ggplot2)

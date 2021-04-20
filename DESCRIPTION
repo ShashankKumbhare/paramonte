@@ -16,3 +16,9 @@ RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/ShashankKumbhare/paramonteR
 BugReports: https://github.com/ShashankKumbhare/paramonteR/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    ggplot2
