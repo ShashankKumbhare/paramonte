@@ -7,6 +7,8 @@
 \title{paramonte: Plain Powerful Parallel Monte Carlo Library}
 \description{
 This is the R interface to ParaMonte: Plain Powerful Parallel Monte Carlo library.
+}
+\details{
 \subsection{What is ParaMonte?}{
 
 ParaMonte is a serial / parallel library of Monte Carlo routines for sampling
@@ -42,13 +44,17 @@ Parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo
 For a quick start, example scripts, and instructions on how to use the ParaDRAM sampler,
 type the following commands enclosed between the comment lines in your R session,\cr
 \cr
+\verb{##################################}\cr
 \code{pm = paramonte_class$new()}\cr
 \code{help("ParaDRAM")           # the input value is case-insensitive}\cr
+\verb{##################################}\cr
 \cr
 or,\cr
 \cr
+\verb{##################################}\cr
 \code{pm = paramonte_class$new()}\cr
 \code{?ParaDRAM                  # get help on ParaDRAM sampler class}\cr
+\verb{##################################}
 }
 }
 

@@ -26,13 +26,17 @@
 #' For a quick start, example scripts, and instructions on how to use the ParaDRAM sampler,
 #'  type the following commands enclosed between the comment lines in your R session,\cr
 #'  \cr
+#' `##################################`\cr
 #' `pm = paramonte_class$new()`\cr
 #' `help("ParaDRAM")           # the input value is case-insensitive`\cr
+#' `##################################`\cr
 #' \cr
 #' or,\cr
 #' \cr
+#' `##################################`\cr
 #' `pm = paramonte_class$new()`\cr
 #' `?ParaDRAM                  # get help on ParaDRAM sampler class`\cr
+#' `##################################`
 #'
 #'
 #' ## Naming conventions
