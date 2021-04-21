@@ -1,6 +1,8 @@
 Package: paramonte
 Type: Package
 Title: Plain Powerful Parallel Monte Carlo Library
+Description:
+    This is the R interface to ParaMonte: Plain Powerful Parallel Monte Carlo library.
 Version: 0.1.0
 Authors@R: c(
     person(given = "Shashank",

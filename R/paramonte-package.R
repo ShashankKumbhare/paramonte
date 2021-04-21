@@ -1,6 +1,4 @@
-#' @description
-#'
-#' This is the R interface to ParaMonte: Plain Powerful Parallel Monte Carlo library.
+#' @details
 #'
 #' ## What is ParaMonte?
 #'
