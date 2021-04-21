@@ -4,9 +4,12 @@ language: R
 cache: packages
 warnings_are_errors: true
 
-os:
-  - linux
-  - osx
+jobs:
+  include:
+    - os: windows
+    - os: linux
+    - os: osx
+      osx_image: xcode12
 
 after_success:
   - Rscript -e 'covr::codecov(type = "all")'
