@@ -1,6 +1,6 @@
 Package: paramonte
 Type: Package
-Title: The Parallel Monte Carlo Library for Monte Carlo simulations
+Title: The Parallel Monte Carlo Library for Monte Carlo Simulations
 Version: 0.1.0
 Author: Shashank Kumbhare <shashank.kumbhare@mavs.uta.edu>
 Maintainer: Shashank Kumbhare <shashank.kumbhare@mavs.uta.edu>

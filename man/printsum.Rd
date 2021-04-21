@@ -15,7 +15,7 @@ printsum(x, y)
 returns sum of x and y
 }
 \description{
-This function simply prints sum 2 numbers
+This function simply prints sum 2 numbers.
 }
 \examples{
 sum(1, 2)
