@@ -1,23 +1,10 @@
 
 ####################################################################################################################################
 ####################################################################################################################################
-#' @title Instantiate a [`R6`] **`paramonte_class`** object for **[paramonte]** package usage
+#' @title An [`R6`] `paramonte_class` for **[paramonte]** package usage
 #' @description
 #' `paramonte_class$new()` initializes a `paramonte_class` object.\cr
-#' It can then be used to instantiate \code{\link{ParaDRAM}} samplers object.\cr
-#' *   This is the first list item.
-#' *   Here's the second list item.
-#'
-#'     I need to add another paragraph below the  second list item.
-#'
-#' *   And here's the third list item.
-#' # Heading 1
-#' this is under heading 1
-#' ## Heading 2
-#' this is under heading 2
-#' ### Heading 3
-#' this is under heading 3
-#' @return The class generator returns a \code{\link{R6}} `paramonte_class` object.
+#' It can then be used to instantiate [`ParaDRAM`] samplers object.\cr
 #' @import ggplot2
 #' @export
 ####################################################################################################################################
@@ -69,7 +56,7 @@ paramonte_class <- R6::R6Class( "paramonte",
 
                                 # initialize >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                                 #' @description Instantiates a `paramonte_class` object.
-                                #' @return Returns a new `paramonte_class` object.
+                                #' @return Returns a [`R6`] object.
                                 #' @examples pm = paramonte_class$new()
                                 initialize = function( ) {
 
@@ -85,15 +72,39 @@ paramonte_class <- R6::R6Class( "paramonte",
 
                                 },
 
+                                # ParaDRAM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                #' @description This method instantiate a [`R6`] [`ParaDRAM`] class object. \cr
+                                #' It can then be used to call [`ParaDRAM`] routines. \cr
+                                #' This is the [`ParaDRAM`] class constructor to generate instances of **serial** and **parallel**
+                                #' **Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo** sampler class
+                                #' of the [`paramonte`] library. The [`ParaDRAM`] class is a child of the [`ParaMonteSampler`] class. \cr
+                                #' The object of [`ParaDRAM`] class can be instantiated only via [`paramonte_class`] object method, \cr
+                                #' (for example: `pm$ParaDRAM()`, where `pm = parmonte_classs$new()` ).\cr
+                                #' All [`ParaDRAM`] class attributes are optional and all attributes can be set after a [`ParaDRAM`]
+                                #' instance is returned by the class constructor.
+                                #' @return Returns a [`R6`] object.
+                                #' @examples
+                                #' pm   = paramonte_class$new()
+                                #' pmpd = pm$ParaDRAM()
+                                ParaDRAM = function() {
+
+                                    ParaDRAMObj = ParaDRAM$new()
+
+                                    lockEnvironment(ParaDRAMObj)
+
+                                    return( ParaDRAMObj )
+
+                                },
+
                                 # print >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                                 #' @description Prints `paramonte_class` object usage.
                                 #' @examples
-                                #'     pm = paramonte_class$new()
-                                #'     pm$print()
-                                #'     # or
+                                #' pm = paramonte_class$new()
+                                #' pm$print()
+                                #' # or
                                 #' @examples
-                                #'     pm = paramonte_class$new()
-                                #'     pm
+                                #' pm = paramonte_class$new()
+                                #' pm
                                 print = function( ) {
 
                                     tab             = private$Err$tab
@@ -102,32 +113,6 @@ paramonte_class <- R6::R6Class( "paramonte",
                                                              "\n",
                                                              tab, "pmpd = pm$ParaDRAM()", "\n",
                                                              sep = "" )
-
-                                },
-
-                                # ParaDRAM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                #' @description This method instantiate a \code{\link{R6}} \code{\link{ParaDRAM}} class object. \cr
-                                #'     It can then be used to call \code{\link{ParaDRAM}} routines. \cr
-                                #'     This is the `ParaDRAM` class constructor to generate instances of **serial** and **parallel** \cr
-                                #'     **Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo** sampler class \cr
-                                #'     of the **\link{paramonte}** library. The `ParaDRAM` class is a child of the \cr
-                                #'     `ParaMonteSampler` class. \cr
-                                #'     The object of `ParaDRAM` class can be instantiated only via \code{\link{paramonte_class}} object \cr
-                                #'     method (for example: `pm$ParaDRAM()`).\cr
-                                #'     \cr
-                                #'     All `ParaDRAM` class attributes are optional and all attributes can be set after a `ParaDRAM` \cr
-                                #'     instance is returned by the class constructor.
-                                #' @return This function returns a \code{\link{R6}} \code{\link{ParaDRAM}} class object.
-                                #' @examples
-                                #'     pm   = paramonte_class$new()
-                                #'     pmpd = pm$ParaDRAM()
-                                ParaDRAM = function() {
-
-                                    ParaDRAMObj = ParaDRAM$new()
-
-                                    lockEnvironment(ParaDRAMObj)
-
-                                    return( ParaDRAMObj )
 
                                 }
 
@@ -146,4 +131,3 @@ paramonte_class <- R6::R6Class( "paramonte",
 # # <<
 # ################################## paramonte #######################################################################################
 # ####################################################################################################################################
-# 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

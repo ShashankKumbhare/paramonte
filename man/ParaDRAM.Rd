@@ -2,19 +2,14 @@
 % Please edit documentation in R/ParaDRAM.R
 \name{ParaDRAM}
 \alias{ParaDRAM}
-\title{Instantiate a \code{\link{R6}} \strong{\code{ParaDRAM}} class object for \strong{\link{paramonte}} package}
-\value{
-This function returns a \code{\link{R6}} \code{ParaDRAM} class object.
-}
+\title{An \code{\link{R6}} \code{ParaDRAM} class for \strong{\link{paramonte}} package usage}
 \description{
-This is the \code{ParaDRAM} class to generate instances of \strong{serial} and \strong{parallel} \cr
-\strong{Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo} sampler class \cr
-of the \strong{\link{paramonte}} library. The \code{ParaDRAM} class is a child of the \cr
-\code{ParaMonteSampler} class. \cr
-The object of this class can be instantiated only via \code{\link{paramonte_class}} object \cr
-method (for example: \code{pm$ParaDRAM()}).\cr
-\cr
-All \code{ParaDRAM} class attributes are optional and all attributes can be set after a \code{ParaDRAM} \cr
+This is the \code{ParaDRAM} class to generate instances of \strong{serial} and \strong{parallel}
+\strong{Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo} sampler class
+of the \code{\link{paramonte}} library. The \code{ParaDRAM} class is a child of the \code{ParaMonteSampler} class. \cr
+The object of this class can be instantiated only via \code{\link{paramonte_class}} object method,\cr
+(for example: \code{pm$ParaDRAM()}, where \code{pm = parmonte_classs$new()} ).\cr
+All \code{ParaDRAM} class attributes are optional and all attributes can be set after a \code{ParaDRAM}
 instance is returned by the class constructor.
 }
 \examples{
@@ -23,20 +18,20 @@ instance is returned by the class constructor.
 ## Method `ParaDRAM$new`
 ## ------------------------------------------------
 
-    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
+pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
 
 ## ------------------------------------------------
 ## Method `ParaDRAM$print`
 ## ------------------------------------------------
 
-    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
-    pmpd$print()
-    # or
-    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
-    pmpd
+pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
+pmpd$print()
+# or
+pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
+pmpd
 }
 \section{Super class}{
 \code{\link[paramonte:ParaMonteSampler]{paramonte::ParaMonteSampler}} -> \code{ParaDRAM}
@@ -75,8 +70,8 @@ Returns a new \code{ParaDRAM} class object.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
+\preformatted{pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
 }
 \if{html}{\out{</div>}}
 
@@ -94,17 +89,17 @@ Prints \code{ParaDRAM} object usage.
 
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
-    pmpd$print()
-    # or
+\preformatted{pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
+pmpd$print()
+# or
 }
 \if{html}{\out{</div>}}
 
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
-    pmpd
+\preformatted{pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
+pmpd
 }
 \if{html}{\out{</div>}}
 

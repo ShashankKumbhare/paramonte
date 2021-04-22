@@ -2,34 +2,11 @@
 % Please edit documentation in R/paramonte_class.R
 \name{paramonte_class}
 \alias{paramonte_class}
-\title{Instantiate a \code{\link{R6}} \strong{\code{paramonte_class}} object for \strong{\link{paramonte}} package usage}
-\value{
-The class generator returns a \code{\link{R6}} \code{paramonte_class} object.
-}
+\title{An \code{\link{R6}} \code{paramonte_class} for \strong{\link{paramonte}} package usage}
 \description{
 \code{paramonte_class$new()} initializes a \code{paramonte_class} object.\cr
 It can then be used to instantiate \code{\link{ParaDRAM}} samplers object.\cr
-\itemize{
-\item This is the first list item.
-\item Here's the second list item.
-
-I need to add another paragraph below the  second list item.
-\item And here's the third list item.
 }
-}
-\section{Heading 1}{
-this is under heading 1
-\subsection{Heading 2}{
-
-this is under heading 2
-\subsection{Heading 3}{
-
-this is under heading 3
-}
-
-}
-}
-
 \examples{
 
 ## ------------------------------------------------
@@ -39,28 +16,28 @@ this is under heading 3
 pm = paramonte_class$new()
 
 ## ------------------------------------------------
-## Method `paramonte_class$print`
-## ------------------------------------------------
-
-    pm = paramonte_class$new()
-    pm$print()
-    # or
-    pm = paramonte_class$new()
-    pm
-
-## ------------------------------------------------
 ## Method `paramonte_class$ParaDRAM`
 ## ------------------------------------------------
 
-    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
+pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
+
+## ------------------------------------------------
+## Method `paramonte_class$print`
+## ------------------------------------------------
+
+pm = paramonte_class$new()
+pm$print()
+# or
+pm = paramonte_class$new()
+pm
 }
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{paramonte_class$new()}}
-\item \href{#method-print}{\code{paramonte_class$print()}}
 \item \href{#method-ParaDRAM}{\code{paramonte_class$ParaDRAM()}}
+\item \href{#method-print}{\code{paramonte_class$print()}}
 \item \href{#method-clone}{\code{paramonte_class$clone()}}
 }
 }
@@ -74,11 +51,41 @@ Instantiates a \code{paramonte_class} object.
 }
 
 \subsection{Returns}{
-Returns a new \code{paramonte_class} object.
+Returns a \code{\link{R6}} object.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{pm = paramonte_class$new()
+}
+\if{html}{\out{</div>}}
+
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ParaDRAM"></a>}}
+\if{latex}{\out{\hypertarget{method-ParaDRAM}{}}}
+\subsection{Method \code{ParaDRAM()}}{
+This method instantiate a \code{\link{R6}} \code{\link{ParaDRAM}} class object. \cr
+It can then be used to call \code{\link{ParaDRAM}} routines. \cr
+This is the \code{\link{ParaDRAM}} class constructor to generate instances of \strong{serial} and \strong{parallel}
+\strong{Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo} sampler class
+of the \code{\link{paramonte}} library. The \code{\link{ParaDRAM}} class is a child of the \code{\link{ParaMonteSampler}} class. \cr
+The object of \code{\link{ParaDRAM}} class can be instantiated only via \code{\link{paramonte_class}} object method, \cr
+(for example: \code{pm$ParaDRAM()}, where \code{pm = parmonte_classs$new()} ).\cr
+All \code{\link{ParaDRAM}} class attributes are optional and all attributes can be set after a \code{\link{ParaDRAM}}
+instance is returned by the class constructor.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{paramonte_class$ParaDRAM()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+Returns a \code{\link{R6}} object.
+}
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{pm   = paramonte_class$new()
+pmpd = pm$ParaDRAM()
 }
 \if{html}{\out{</div>}}
 
@@ -96,47 +103,15 @@ Prints \code{paramonte_class} object usage.
 
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{    pm = paramonte_class$new()
-    pm$print()
-    # or
+\preformatted{pm = paramonte_class$new()
+pm$print()
+# or
 }
 \if{html}{\out{</div>}}
 
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{    pm = paramonte_class$new()
-    pm
-}
-\if{html}{\out{</div>}}
-
-}
-
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ParaDRAM"></a>}}
-\if{latex}{\out{\hypertarget{method-ParaDRAM}{}}}
-\subsection{Method \code{ParaDRAM()}}{
-This method instantiate a \code{\link{R6}} \code{\link{ParaDRAM}} class object. \cr
-It can then be used to call \code{\link{ParaDRAM}} routines. \cr
-This is the \code{ParaDRAM} class constructor to generate instances of \strong{serial} and \strong{parallel} \cr
-\strong{Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo} sampler class \cr
-of the \strong{\link{paramonte}} library. The \code{ParaDRAM} class is a child of the \cr
-\code{ParaMonteSampler} class. \cr
-The object of \code{ParaDRAM} class can be instantiated only via \code{\link{paramonte_class}} object \cr
-method (for example: \code{pm$ParaDRAM()}).\cr
-\cr
-All \code{ParaDRAM} class attributes are optional and all attributes can be set after a \code{ParaDRAM} \cr
-instance is returned by the class constructor.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{paramonte_class$ParaDRAM()}\if{html}{\out{</div>}}
-}
-
-\subsection{Returns}{
-This function returns a \code{\link{R6}} \code{\link{ParaDRAM}} class object.
-}
-\subsection{Examples}{
-\if{html}{\out{<div class="r example copy">}}
-\preformatted{    pm   = paramonte_class$new()
-    pmpd = pm$ParaDRAM()
+\preformatted{pm = paramonte_class$new()
+pm
 }
 \if{html}{\out{</div>}}
 
