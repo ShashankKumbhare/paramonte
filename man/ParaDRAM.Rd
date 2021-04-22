@@ -41,7 +41,6 @@ pmpd
 \itemize{
 \item \href{#method-new}{\code{ParaDRAM$new()}}
 \item \href{#method-print}{\code{ParaDRAM$print()}}
-\item \href{#method-clone}{\code{ParaDRAM$clone()}}
 }
 }
 \if{html}{
@@ -105,22 +104,5 @@ pmpd
 
 }
 
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaDRAM$clone(deep = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
 }
 }

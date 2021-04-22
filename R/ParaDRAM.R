@@ -29,7 +29,7 @@
 
     # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Sourcing Methods / Classes / Auxiliary-functions
 
-ParaDRAM <- R6::R6Class(    "ParaDRAM",
+ParaDRAM <- R6::R6Class(    "ParaDRAM", cloneable = FALSE,
 
                             inherit = ParaMonteSampler,
 

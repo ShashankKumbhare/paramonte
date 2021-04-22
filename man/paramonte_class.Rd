@@ -13,7 +13,7 @@ It can then be used to instantiate \code{\link{ParaDRAM}} samplers object.\cr
 ## Method `paramonte_class$new`
 ## ------------------------------------------------
 
-pm = paramonte_class$new()
+pm   = paramonte_class$new()
 
 ## ------------------------------------------------
 ## Method `paramonte_class$ParaDRAM`
@@ -38,7 +38,6 @@ pm
 \item \href{#method-new}{\code{paramonte_class$new()}}
 \item \href{#method-ParaDRAM}{\code{paramonte_class$ParaDRAM()}}
 \item \href{#method-print}{\code{paramonte_class$print()}}
-\item \href{#method-clone}{\code{paramonte_class$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
@@ -55,7 +54,7 @@ Returns a \code{\link{R6}} object.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{pm = paramonte_class$new()
+\preformatted{pm   = paramonte_class$new()
 }
 \if{html}{\out{</div>}}
 
@@ -117,22 +116,5 @@ pm
 
 }
 
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{paramonte_class$clone(deep = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
 }
 }

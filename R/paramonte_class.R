@@ -6,6 +6,8 @@
 #' `paramonte_class$new()` initializes a `paramonte_class` object.\cr
 #' It can then be used to instantiate [`ParaDRAM`] samplers object.\cr
 #' @import ggplot2
+#' @import grDevices
+#' @import utils
 #' @export
 ####################################################################################################################################
 ####################################################################################################################################
@@ -27,7 +29,7 @@
 
     # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Sourcing Methods / Classes / Auxiliary-functions
 
-paramonte_class <- R6::R6Class( "paramonte",
+paramonte_class <- R6::R6Class( "paramonte", cloneable = FALSE,
 
                             # Private >> ###########################################################################################
 
@@ -57,7 +59,8 @@ paramonte_class <- R6::R6Class( "paramonte",
                                 # initialize >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                                 #' @description Instantiates a `paramonte_class` object.
                                 #' @return Returns a [`R6`] object.
-                                #' @examples pm = paramonte_class$new()
+                                #' @examples
+                                #' pm   = paramonte_class$new()
                                 initialize = function( ) {
 
                                     private$Err        = Err_class$new()
