@@ -2,11 +2,11 @@
 % Please edit documentation in R/ParaDRAM.R
 \name{ParaDRAM}
 \alias{ParaDRAM}
-\title{An \code{\link{R6}} \code{ParaDRAM} class for \strong{\link{paramonte}} package usage}
+\title{An \code{\link{R6}} \code{ParaDRAM} class for \link{paramonte} package usage}
 \description{
 This is the \code{ParaDRAM} class to generate instances of \strong{serial} and \strong{parallel}
 \strong{Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo} sampler class
-of the \code{\link{paramonte}} library. The \code{ParaDRAM} class is a child of the \code{ParaMonteSampler} class. \cr
+of the \code{\link{paramonte}} library. The \code{ParaDRAM} class is a child of the \code{\link{ParaMonteSampler}} class. \cr
 The object of this class can be instantiated only via \code{\link{paramonte_class}} object method,\cr
 (for example: \code{pm$ParaDRAM()}, where \code{pm = parmonte_classs$new()} ).\cr
 All \code{ParaDRAM} class attributes are optional and all attributes can be set after a \code{ParaDRAM}

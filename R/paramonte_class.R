@@ -7,6 +7,7 @@
 #' It can then be used to instantiate [`ParaDRAM`] samplers object.\cr
 #' @import ggplot2
 #' @import grDevices
+#' @import methods
 #' @import utils
 #' @export
 ####################################################################################################################################
@@ -36,7 +37,13 @@ paramonte_class <- R6::R6Class( "paramonte", cloneable = FALSE,
                             private = list(
 
                                 Err     = NULL,
-                                libName = "paramonte"
+                                libName = "paramonte",
+                                names   = list( paramonte = "ParaMonte",
+                                                paradram  = "ParaDRAM",
+                                                matdram   = "MatDRAM",
+                                                paradise  = "ParaDISE",
+                                                paranest  = "ParaNest",
+                                                paratemp  = "ParaTemp" )
 
                             ), # << Private
 
@@ -44,17 +51,25 @@ paramonte_class <- R6::R6Class( "paramonte", cloneable = FALSE,
 
                             public = list(
 
+                                # public fields >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                #' @field website Some web addresses relevant to the ParaMonte library
                                 website  = list(),
+
+                                #' @field authors A string containing the ParaMonte library authors
                                 authors  = NULL,
+
+                                #' @field credits A string containing the the acknowledgment statement
                                 credits  = NULL,
+
+                                #' @field version ParaMonte library version information
                                 version  = NULL,
+
+                                #' @field platform
+                                #' An R list struct with three logical components:
+                                #' - isWin32 : TRUE if the operating system is Windows
+                                #' - isLinux : TRUE if the operating system is Linux
+                                #' - isMacOS : TRUE if the operating system is macOS (Darwin)
                                 platform = "",
-                                names    = list( paramonte = "ParaMonte",
-                                                 paradram  = "ParaDRAM",
-                                                 matdram   = "MatDRAM",
-                                                 paradise  = "ParaDISE",
-                                                 paranest  = "ParaNest",
-                                                 paratemp  = "ParaTemp" ),
 
                                 # initialize >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                                 #' @description Instantiates a `paramonte_class` object.

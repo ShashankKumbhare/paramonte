@@ -32,6 +32,26 @@ pm$print()
 pm = paramonte_class$new()
 pm
 }
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{website}}{Some web addresses relevant to the ParaMonte library}
+
+\item{\code{authors}}{A string containing the ParaMonte library authors}
+
+\item{\code{credits}}{A string containing the the acknowledgment statement}
+
+\item{\code{version}}{ParaMonte library version information}
+
+\item{\code{platform}}{An R list struct with three logical components:
+\itemize{
+\item isWin32 : TRUE if the operating system is Windows
+\item isLinux : TRUE if the operating system is Linux
+\item isMacOS : TRUE if the operating system is macOS (Darwin)
+}}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{

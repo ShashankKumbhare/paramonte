@@ -1,11 +1,11 @@
 
 ####################################################################################################################################
 ####################################################################################################################################
-#' @title An [`R6`] `ParaDRAM` class for **[paramonte]** package usage
+#' @title An [`R6`] `ParaDRAM` class for [paramonte] package usage
 #' @description
 #' This is the `ParaDRAM` class to generate instances of **serial** and **parallel**
 #' **Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo** sampler class
-#' of the [`paramonte`] library. The `ParaDRAM` class is a child of the `ParaMonteSampler` class. \cr
+#' of the [`paramonte`] library. The `ParaDRAM` class is a child of the [`ParaMonteSampler`] class. \cr
 #' The object of this class can be instantiated only via [`paramonte_class`] object method,\cr
 #' (for example: `pm$ParaDRAM()`, where `pm = parmonte_classs$new()` ).\cr
 #' All `ParaDRAM` class attributes are optional and all attributes can be set after a `ParaDRAM`
