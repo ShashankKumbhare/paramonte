@@ -10,6 +10,15 @@ readEverything <- function( file, arg2, arg3 = TRUE, arg4 = FALSE, delimiter, pa
     private$objectName = callerName[2]                                                                               # >> objectName
     routineName        = callerName[3]                                                                              # >> routineName
 
+    writeLines("1.")
+    writeLines(callerName)
+
+    writeLines("2.")
+    writeLines(private$objectName)
+
+    writeLines("3.")
+    writeLines(routineName)
+
     # Get & Verify fileType (based on routineName) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     fileType           = tolower( substr( routineName, 5, 1000 ) )                                                 # >> Get fileType
@@ -21,7 +30,7 @@ readEverything <- function( file, arg2, arg3 = TRUE, arg4 = FALSE, delimiter, pa
 
     switch( routineName,
 
-        readChain = ,  readSample = , readProgress = , readMarkovChain = {  # >> Set delimiter, parseContents, renabled (if missing)
+        readchain = ,  readsample = , readprogress = , readmarkovChain = {  # >> Set delimiter, parseContents, renabled (if missing)
 
             if ( missing(arg2) & missing(delimiter) )     { delimiter     = private$setDelimiterToRead(fileType) }# else { delimiter     = arg2 }
             if ( missing(arg3) & missing(parseContents) ) { parseContents = TRUE }                                # else { parseContents = arg3 }
@@ -128,7 +137,3 @@ readEverything <- function( file, arg2, arg3 = TRUE, arg4 = FALSE, delimiter, pa
 # <<
 ################################## Help Code #######################################################################################
 ####################################################################################################################################
-
-
-
-

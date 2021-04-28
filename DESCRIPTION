@@ -30,6 +30,7 @@ Imports:
 Collate:
     "0hello.R"
     "0printsum.R"
+    "docParaMonteSampler.R"
     "Err_class.R"
     "capitalize.R"
     "checkArg.R"

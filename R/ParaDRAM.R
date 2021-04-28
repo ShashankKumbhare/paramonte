@@ -1,6 +1,7 @@
 
 ####################################################################################################################################
 ####################################################################################################################################
+# >>
 #' @title An [`R6`] `ParaDRAM` class for [paramonte] package usage
 #' @description
 #' This is the `ParaDRAM` class to generate instances of **serial** and **parallel**
@@ -10,6 +11,7 @@
 #' (for example: `pm$ParaDRAM()`, where `pm = parmonte_classs$new()` ).\cr
 #' All `ParaDRAM` class attributes are optional and all attributes can be set after a `ParaDRAM`
 #' instance is returned by the class constructor.
+# <<
 ####################################################################################################################################
 ####################################################################################################################################
 
