@@ -11,11 +11,9 @@ This is the R interface to ParaMonte: Plain Powerful Parallel Monte Carlo librar
 \details{
 \subsection{What is ParaMonte?}{
 
-ParaMonte is a serial / parallel library of Monte Carlo routines for sampling
-mathematical objective functions of arbitrary-dimensions, in particular,
-the posterior distributions of Bayesian models in data science,
-Machine Learning, and scientific inference, with the design
-goal of unifying the
+ParaMonte is a serial / parallel library of Monte Carlo routines for sampling mathematical objective functions of arbitrary-
+dimensions, in particular, the posterior distributions of Bayesian models in data science, Machine Learning, and scientific
+inference, with the design goal of unifying the
 \itemize{
 \item \strong{automation} of Monte Carlo simulations,
 \item \strong{user-friendliness} of the library,
@@ -39,62 +37,44 @@ For the API documentation, visit:
 
 The routines currently supported by the ParaMonte Python library include:
 \itemize{
-\item \strong{ParaDRAM}\cr
-Parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo Sampler.
-For a quick start, example scripts, and instructions on how to use the ParaDRAM sampler,
-type the following commands enclosed between the comment lines in your R session,\cr
-\cr
-\verb{##################################}\cr
-\code{pm = paramonte_class$new()}\cr
-\code{help("ParaDRAM")           # the input value is case-insensitive}\cr
-\verb{##################################}\cr
-\cr
-or,\cr
-\cr
-\verb{##################################}\cr
-\code{pm = paramonte_class$new()}\cr
-\code{?ParaDRAM                  # get help on ParaDRAM sampler class}\cr
-\verb{##################################}
+\item \strong{\link{ParaDRAM}}
+
+Parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo Sampler. For a quick start, example scripts,
+and instructions on how to use the \link{ParaDRAM} sampler, type the following commands enclosed between the comment lines in your
+R session,\preformatted{pm = paramonte_class$new()
+help("ParaDRAM")           # the input value is case-insensitive
+}
+
+or,\preformatted{pm = paramonte_class$new()
+?ParaDRAM                  # get help on ParaDRAM sampler class
+}
 }
 }
 
 \subsection{Naming conventions}{
 \itemize{
-\item The camelCase naming style is used throughout the entire ParaMonte
-library, across all programming languages. The ParaMonte library is
-a multi-language cross-platform library. To increase the consistently
-and similarities of all implementations, a single naming convention
-had to be used for all different languages.
-\item All simulation specifications start with a lowercase letter, including
-scalar/vector/matrix int, float, string, or boolean variables.
-\item The name of any variable that represents a vector of values is normally
-suffixed with \code{Vec}, for example: \code{startPointVec}, ...
-\item The name of any variable that represents a matrix of values is normally
-suffixed with \code{Mat}, for example: \code{proposalStartCorMat}, ...
-\item The name of any variable that represents a list of varying-size values
-is normally suffixed with \code{List}, like: \code{variableNameList}, ...
+\item The camelCase naming style is used throughout the entire ParaMonte library, across all programming languages. The ParaMonte
+library is a multi-language cross-platform library. To increase the consistently and similarities of all implementations, a
+single naming convention had to be used for all different languages.
+\item All simulation specifications start with a lowercase letter, including scalar/vector/matrix int, float, string, or boolean variables.
+\item The name of any variable that represents a vector of values is normally suffixed with \code{Vec}, for example: \code{startPointVec}, ...
+\item The name of any variable that represents a matrix of values is normally suffixed with \code{Mat}, for example: \code{proposalStartCorMat}, ...
+\item The name of any variable that represents a list of varying-size values is normally suffixed with \code{List}, like: \code{variableNameList}, ...
 \item All static functions or methods of classes begin with a lowercase verb.
-\item Significant attempt has been made to end all boolean variables with a
-passive verb, such that the full variable name virtually forms a
-proposition, that is, an English-language statement that should
-be either \code{TRUE} or \code{FALSE}, set by the user.
+\item Significant attempt has been made to end all boolean variables with a passive verb, such that the full variable name virtually
+forms a proposition, that is, an English-language statement that should be either \code{TRUE} or \code{FALSE}, set by the user.
 }
 }
 
 \subsection{Tips}{
 \itemize{
-\item When running the ParaMonte samplers, in particular on multiple cores
-in parallel, it would be best to close any such aggressive software or
-applications as \strong{Dropbox}, \strong{ZoneAlarm}, ... that can interfere with
-the ParaMonte simulation output files, potentially causing the sampler to
-crash before the successful completion of the simulation.
-These situations should however happen only scarcely.
-\item On Windows systems, when restarting an old interrupted ParaMonte simulation,
-ensure your Python session is also restarted before the simulation restart.
-This may be needed as Windows sometimes locks access to some or all of the
-simulation output files.
-\item To unset an already-set input simulation specification, simply set the
-simulation attribute to None or re-instantiate the sampler.
+\item When running the ParaMonte samplers, in particular on multiple cores in parallel, it would be best to close any such aggressive
+software or applications as \strong{Dropbox}, \strong{ZoneAlarm}, ... that can interfere with the ParaMonte simulation output files,
+potentially causing the sampler to crash before the successful completion of the simulation. These situations should however
+happen only scarcely.
+\item On Windows systems, when restarting an old interrupted ParaMonte simulation, ensure your Python session is also restarted before
+the simulation restart. This may be needed as Windows sometimes locks access to some or all of the simulation output files.
+\item To unset an already-set input simulation specification, simply set the simulation attribute to None or re-instantiate the sampler.
 }
 }
 }
@@ -111,7 +91,7 @@ Useful links:
 
 Authors:
 \itemize{
-  \item Amir Shahmoradi \email{a.shahmoradi.uta.edu} [copyright holder]
+  \item Amir Shahmoradi \email{a.shahmoradi@uta.edu} [copyright holder]
 }
 
 }

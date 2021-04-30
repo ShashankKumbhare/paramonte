@@ -12,7 +12,7 @@ Authors@R: c(
     person(given = "Amir",
         family = "Shahmoradi",
         role = c("aut", "cph"),
-        email = "a.shahmoradi.uta.edu"))
+        email = "a.shahmoradi@uta.edu"))
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -29,7 +29,6 @@ Imports:
     R6, ggplot2, ggExtra, corrplot, mvtnorm, grDevices, methods, utils
 Collate:
     "0hello.R"
-    "0printsum.R"
     "docParaMonteSampler.R"
     "Err_class.R"
     "capitalize.R"
@@ -77,6 +76,5 @@ Collate:
     "Target.R"
     "TabularFileContents.R"
     "ParaDRAM.R"
-    "paramonte_class.R"
     "paramonte-package.R"
     "zzz.R"

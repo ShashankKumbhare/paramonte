@@ -2,14 +2,19 @@
 ####################################################################################################################################
 ####################################################################################################################################
 # >>
+#'
 #' @title An [`R6`] `ParaMonteSampler` class for [paramonte] package usage
-#' @description This is the `ParaMonteSampler` base class for the ParaMonte sampler routines. This class is NOT meant to be directly
-#' accessed or called by the user of the [paramonte] package. However, its children, such as the [`ParaDRAM`] sampler class will be
-#' directly accessible to the public.
+#'
+#' @description
+#' This is the `ParaMonteSampler` base class for the ParaMonte sampler routines. This class is NOT meant to be directly accessed or
+#' called by the user of the [paramonte] package. However, its children, such as the [`ParaDRAM`] sampler class will be directly
+#' accessible to the public.
+#'
 # @template templateParamFile
 # @template templateParamDelimiter
 # @template templateParamParseContents
 # @template templateParamRenabled
+
 # <<
 ####################################################################################################################################
 ####################################################################################################################################
@@ -34,7 +39,7 @@ ParaMonteSampler <- R6::R6Class(  "ParaMonteSampler", cloneable = FALSE,
                             private = list(
 
                                 Err        = NULL,
-                                methodName = "ParaDRAM",
+                                methodName = "",
                                 objectName = NULL,
                                 fileInfo   = NULL,
                                 platform   = NULL,
@@ -65,52 +70,78 @@ ParaMonteSampler <- R6::R6Class(  "ParaMonteSampler", cloneable = FALSE,
                             public = list(
 
                                 #' @field buildMode
+                                #'
                                 #' optional string argument with the default value “release”. possible choices are:
-                                #' - “debug” \cr
+                                #'
+                                #' - “debug”
+                                #'
                                 #'   to be used for identifying sources of bug and causes of code crash.
-                                #' - “release” \cr
+                                #'
+                                #' - “release”
+                                #'
                                 #'   to be used in all other normal scenarios for maximum runtime efficiency.
+                                #'
                                 buildMode      = "release",
 
                                 #' @field mpiEnabled
-                                #' Optional logical (boolean) indicator which is `FALSE` by default. \cr
-                                #' If it is set to `TRUE`, it will cause the ParaMonte simulation to run in parallel on the
-                                #' requested number of processors.\cr
-                                #' See the class documentation guidelines in the above for information on how to run a simulation in parallel.
+                                #'
+                                #' Optional logical (boolean) indicator which is `FALSE` by default.
+                                #'
+                                #' If it is set to `TRUE`, it will cause the ParaMonte simulation to run in parallel on the requested
+                                #' number of processors.
+                                #'
+                                #' See the class documentation guidelines in the above for information on how to run a simulation in
+                                #' parallel.
+                                #'
                                 mpiEnabled     = FALSE,
 
                                 #' @field inputFile
-                                #' Optional string input representing the path to an external input namelist of simulation specifications. \cr
+                                #'
+                                #' Optional string input representing the path to an external input namelist of simulation specifications.
+                                #'
                                 #' USE THIS OPTIONAL ARGUMENT WITH CAUTION AND ONLY IF YOU KNOW WHAT YOU ARE DOING.
                                 #'
                                 #' ### WARNING:
-                                #' Specifying an input file will cause the sampler to ignore all other simulation specifications set by
-                                #' the user via sampler instance's `spec`-component attributes.
+                                #'
+                                #' Specifying an input file will cause the sampler to ignore all other simulation specifications set
+                                #' by the user via sampler instance's `spec`-component attributes.
+                                #'
                                 inputFile      = NULL,
 
                                 #' @field spec
-                                #' An R list containing all simulation specifications. \cr
-                                #' All simulation attributes are by default set to appropriate values at runtime. To override the default
-                                #' simulation specifications, set the `spec` attributes to some desired values of your choice. \cr
-                                #' If you need help on any of the simulation specifications, try the supplied `helpme()` function
-                                #' in this component. \cr
+                                #'
+                                #' An R list containing all simulation specifications.
+                                #'
+                                #' All simulation attributes are by default set to appropriate values at runtime. To override the
+                                #' default simulation specifications, set the `spec` attributes to some desired values of your choice.
+                                #'
+                                #' If you need help on any of the simulation specifications, try the supplied `helpme()` function in
+                                #' this component.
+                                #'
                                 #' If you wish to reset some specifications to the default values, simply set them to `NULL`.
+                                #'
                                 spec           = NULL,
 
                                 #' @field reportEnabled
-                                #' optional logical (boolean) indicator which is `TRUE` by default. \cr
-                                #' If it is set to `TRUE`, it will cause extensive guidelines to be printed on the standard output as the
-                                #' simulation or post-processing continues with hints on the next possible steps that could be taken in
-                                #' the process. If you do not need such help and information set this variable to `FALSE` to silence all
-                                #' output messages.
+                                #'
+                                #' optional logical (boolean) indicator which is `TRUE` by default.
+                                #'
+                                #' If it is set to `TRUE`, it will cause extensive guidelines to be printed on the standard output
+                                #' as the simulation or post-processing continues with hints on the next possible steps that could
+                                #' be taken in the process. If you do not need such help and information set this variable to `FALSE`
+                                #' to silence all output messages.
+                                #'
                                 reportEnabled  = NULL,
 
                                 # initialize >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                #'
                                 #' @description Instantiates a `ParaMonteSampler` class object.
-                                #' @param platform platform for [paramonte] package.
-                                #' @param website website for [paramonte] package.
+                                #'
+                                #' @param methodName A string representing the name of the ParaMonte sampler that is to be instantiated.
+                                #'
                                 #' @return Returns a new `ParaMonteSampler` class object.
-                                initialize = function(platform, website) {
+                                #'
+                                initialize = function( methodName ) {
 
                                     self$spec            = list()
                                     self$reportEnabled   = TRUE
@@ -123,20 +154,19 @@ ParaMonteSampler <- R6::R6Class(  "ParaMonteSampler", cloneable = FALSE,
                                     private$method$isParaTemp = FALSE
                                     website                   = list()                                 # >> SET TEMPORARILY xxx <<
                                     website$home$url          = "https://www.cdslab.org/paramonte/"    # >> SET TEMPORARILY xxx <<
-                                    private$website           = website
-                                    private$platform          = platform
+                                    # private$website           = website
+                                    # private$platform          = platform
+                                    private$methodName        = methodName
 
                                     return(invisible(self))
 
                                 },
 
                                 # readChain >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                # @description Return a list of the contents of a set of ParaDRAM output chain files whose names
-                                # begin the user-provided input file. This method is to be only used for postprocessing of the output
-                                # chain file(s) of an already finished ParaDRAM simulation. It is not meant to be called by all
-                                # processes in parallel mode, although it is possible.\cr
+                                #'
                                 #' @description
-                                #' `r getDocParaMonteSamplerDescription("chain")`
+                                #' `r getDocParaMonteSamplerDescriptionBeginning("chain")`
+                                #'
                                 #' @param file
                                 #' `r getDocParaMonteSamplerParamFile("chain")`
                                 #' @param delimiter
@@ -145,41 +175,27 @@ ParaMonteSampler <- R6::R6Class(  "ParaMonteSampler", cloneable = FALSE,
                                 #' `r getDocParaMonteSamplerParamParseContents("chain")`
                                 #' @param renabled
                                 #' `r getDocParaMonteSamplerParamRenabled("chain")`
-                                #' @return
-                                #' `chainList` (optional)\cr
-                                #' \cr
-                                #' An R list of `TabularFileContents` objects, each of which corresponds to the contents of a unique
-                                #' restart file. Each object has the following components:
-                                #' - `file`\cr
-                                #'   The full absolute path to the output file.
-                                #' - `delimiter`\cr
-                                #'   The delimiter used in the output file.
-                                #' - `ndim`\cr
-                                #'   The number of dimensions of the domain of the objective function from which the output has been drawn.
-                                #' - `count`\cr
-                                #'   The number of sampled points in the output file.
-                                #' - `plot`\cr
-                                #'   An R list containing the graphics tools for the visualization of the contents of the file.
-                                #' - `df`\cr
-                                #'   The contents of the output file in the form of a DataFrame (hence called `df`).
-                                #' - `contents`\cr
-                                #'   corresponding to each column in the chain file, a property with the same name as the column
-                                #'   header is also created for the object which contains the data stored in that column of the progress
-                                #'   file. These properties are all stored in the attribute `contents`.
                                 #'
-                                #' If `renabled = TRUE`, the list of objects will be returned as the return value of the method.
-                                #' Otherwise, the list will be stored in a component of the ParaDRAM object named `chainList`.
+                                #' @return
+                                #' `r getDocParaMonteSamplerReturnBeginning("chain")`
+                                #' `r getDocParaMonteSamplerReturnItemFile("chain")`
+                                #' `r getDocParaMonteSamplerReturnItemDelimiter("chain")`
+                                #' `r getDocParaMonteSamplerReturnItemNdim("chain")`
+                                #' `r getDocParaMonteSamplerReturnItemCount("chain")`
+                                #' `r getDocParaMonteSamplerReturnItemPlot("chain")`
+                                #' `r getDocParaMonteSamplerReturnItemDf("chain")`
+                                #' `r getDocParaMonteSamplerReturnItemContents("chain")`
+                                #' `r getDocParaMonteSamplerDescriptionEnding("chain")`
+                                #'
                                 readChain       = function(file, delimiter, parseContents, renabled) {
                                     chainList = private$readchain( file = file, delimiter = delimiter, parseContents = parseContents, renabled = renabled )
                                 },
 
                                 # readSample >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                # @description Return a list of the contents of a set of ParaDRAM output sample files whose names
-                                # contain the user-provided input file. This method is to be only used for postprocessing of the
-                                # output sample file(s) of an already finished ParaDRAM simulation. It is not meant to be called
-                                # by all processes in parallel mode, although it is possible.
+                                #'
                                 #' @description
-                                #' `r getDocParaMonteSamplerDescription("sample")`
+                                #' `r getDocParaMonteSamplerDescriptionBeginning("sample")`
+                                #'
                                 #' @param file
                                 #' `r getDocParaMonteSamplerParamFile("sample")`
                                 #' @param delimiter
@@ -188,69 +204,73 @@ ParaMonteSampler <- R6::R6Class(  "ParaMonteSampler", cloneable = FALSE,
                                 #' `r getDocParaMonteSamplerParamParseContents("sample")`
                                 #' @param renabled
                                 #' `r getDocParaMonteSamplerParamRenabled("sample")`
-                                #' @return
-                                #' `sampleList` (optional)\cr
-                                #' \cr
-                                #' An R list of `TabularFileContents` objects, each of which corresponds to the contents of a unique
-                                #' restart file. Each object has the following components:
-                                #' - `file`\cr
-                                #'   The full absolute path to the output file.
-                                #' - `delimiter`\cr
-                                #'   The delimiter used in the output file.
-                                #' - `ndim`\cr
-                                #'   The number of dimensions of the domain of the objective function from which the output has been drawn.
-                                #' - `count`\cr
-                                #'   The number of sampled points in the output file.
-                                #' - `plot`\cr
-                                #'   An R list containing the graphics tools for the visualization of the contents of the file.
-                                #' - `df`\cr
-                                #'   The contents of the output file in the form of a DataFrame (hence called `df`).
-                                #' - `contents`\cr
-                                #'   corresponding to each column in the sample file, a property with the same name as the column
-                                #'   header is also created for the object which contains the data stored in that column of the progress
-                                #'   file. These properties are all stored in the attribute `contents`.
                                 #'
-                                #' If `renabled = TRUE`, the list of objects will be returned as the return value of the method.
-                                #' Otherwise, the list will be stored in a component of the ParaDRAM object named `sampleList`.
+                                #' @return
+                                #' `r getDocParaMonteSamplerReturnBeginning("sample")`
+                                #' `r getDocParaMonteSamplerReturnItemFile("sample")`
+                                #' `r getDocParaMonteSamplerReturnItemDelimiter("sample")`
+                                #' `r getDocParaMonteSamplerReturnItemNdim("sample")`
+                                #' `r getDocParaMonteSamplerReturnItemCount("sample")`
+                                #' `r getDocParaMonteSamplerReturnItemPlot("sample")`
+                                #' `r getDocParaMonteSamplerReturnItemDf("sample")`
+                                #' `r getDocParaMonteSamplerReturnItemContents("sample")`
+                                #' `r getDocParaMonteSamplerDescriptionEnding("sample")`
+                                #'
                                 readSample      = function(file, delimiter, parseContents, renabled) {
                                     chainList = private$readchain( file = file, delimiter = delimiter, parseContents = parseContents, renabled = renabled )
                                 },
 
                                 # readReport >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                # @description Return a list of the contents of a set of the simulation(s) output report files whose
-                                # names begin the user-provided input file prefix, or as specified by the input simulation specification
-                                # `SAMPLER$spec$outputFileName`, where SAMPLER can be an instance of any one of the ParaMonte's sampler
-                                # classes, such as `ParaDRAM`.
-                                # ### NOTE
-                                # This method is to be only used for post-processing of the output report file(s) of an already finished
-                                # simulation. It is NOT meant to be called by all processes in parallel mode, although it is possible.
+                                #'
                                 #' @description
-                                #' `r getDocParaMonteSamplerDescription("report")`
+                                #' `r getDocParaMonteSamplerDescriptionBeginning("report")`
+                                #'
                                 #' @param file
                                 #' `r getDocParaMonteSamplerParamFile("report")`
                                 #' @param renabled
                                 #' `r getDocParaMonteSamplerParamRenabled("report")`
-                                #' @return Returns a
+                                #'
+                                #' @return
+                                #' `r getDocParaMonteSamplerReturnBeginning("report")`
+                                #' `r getDocParaMonteSamplerReturnItemFile("report")`
+                                #' `r getDocParaMonteSamplerReturnItemContents("report")`
+                                #' `r getDocParaMonteSamplerDescriptionEnding("report")`
+                                #'
                                 readReport      = function(file, renabled) {
                                     chainList = private$readchain( file = file, renabled = renabled )
                                 },
 
                                 # readRestart >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                #'
                                 #' @description
-                                #' `r getDocParaMonteSamplerDescription("restart")`\cr
+                                #' `r getDocParaMonteSamplerDescriptionBeginning("restart")`
                                 #' `r getDocParaMonteSamplerDescriptionRestartWarning()`
+                                #'
                                 #' @param file
                                 #' `r getDocParaMonteSamplerParamFile("restart")`
                                 #' @param renabled
                                 #' `r getDocParaMonteSamplerParamRenabled("restart")`
-                                #' @return Returns a
+                                #'
+                                #' @return
+                                #' `r getDocParaMonteSamplerReturnBeginning("restart")`
+                                #' `r getDocParaMonteSamplerReturnItemFile("restart")`
+                                #' `r getDocParaMonteSamplerReturnItemNdim("restart")`
+                                #' `r getDocParaMonteSamplerReturnItemCount("restart")`
+                                #' `r getDocParaMonteSamplerReturnItemPlot("restart")`
+                                #' `r getDocParaMonteSamplerReturnItemDf("restart")`
+                                #' `r getDocParaMonteSamplerReturnItemContents("restart")`
+                                #' `r getDocParaMonteSamplerReturnItemPropNameList("restart")`
+                                #' `r getDocParaMonteSamplerDescriptionEnding("restart")`
+                                #'
                                 readRestart     = function(file, renabled) {
                                     chainList = private$readchain( file = file, renabled = renabled )
                                 },
 
                                 # readProgress >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                #'
                                 #' @description
-                                #' `r getDocParaMonteSamplerDescription("progress")`
+                                #' `r getDocParaMonteSamplerDescriptionBeginning("progress")`
+                                #'
                                 #' @param file
                                 #' `r getDocParaMonteSamplerParamFile("progress")`
                                 #' @param delimiter
@@ -259,14 +279,26 @@ ParaMonteSampler <- R6::R6Class(  "ParaMonteSampler", cloneable = FALSE,
                                 #' `r getDocParaMonteSamplerParamParseContents("progress")`
                                 #' @param renabled
                                 #' `r getDocParaMonteSamplerParamRenabled("progress")`
-                                #' @return Returns a
+                                #'
+                                #' @return
+                                #' `r getDocParaMonteSamplerReturnBeginning("progress")`
+                                #' `r getDocParaMonteSamplerReturnItemFile("progress")`
+                                #' `r getDocParaMonteSamplerReturnItemDelimiter("progress")`
+                                #' `r getDocParaMonteSamplerReturnItemNcol("progress")`
+                                #' `r getDocParaMonteSamplerReturnItemPlot("progress")`
+                                #' `r getDocParaMonteSamplerReturnItemDf("progress")`
+                                #' `r getDocParaMonteSamplerReturnItemContents("progress")`
+                                #' `r getDocParaMonteSamplerDescriptionEnding("progress")`
+                                #'
                                 readProgress    = function(file, delimiter, parseContents, renabled) {
                                     chainList = private$readchain( file = file, delimiter = delimiter, parseContents = parseContents, renabled = renabled )
                                 },
 
                                 # readMarkovChain >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                #'
                                 #' @description
-                                #' `r getDocParaMonteSamplerDescription("markovChain")`
+                                #' `r getDocParaMonteSamplerDescriptionBeginning("markovChain")`
+                                #'
                                 #' @param file
                                 #' `r getDocParaMonteSamplerParamFile("markovChain")`
                                 #' @param delimiter
@@ -275,7 +307,18 @@ ParaMonteSampler <- R6::R6Class(  "ParaMonteSampler", cloneable = FALSE,
                                 #' `r getDocParaMonteSamplerParamParseContents("markovChain")`
                                 #' @param renabled
                                 #' `r getDocParaMonteSamplerParamRenabled("markovChain")`
-                                #' @return Returns a
+                                #'
+                                #' @return
+                                #' `r getDocParaMonteSamplerReturnBeginning("markovChain")`
+                                #' `r getDocParaMonteSamplerReturnItemFile("markovChain")`
+                                #' `r getDocParaMonteSamplerReturnItemDelimiter("markovChain")`
+                                #' `r getDocParaMonteSamplerReturnItemNdim("markovChain")`
+                                #' `r getDocParaMonteSamplerReturnItemCount("markovChain")`
+                                #' `r getDocParaMonteSamplerReturnItemPlot("markovChain")`
+                                #' `r getDocParaMonteSamplerReturnItemDf("markovChain")`
+                                #' `r getDocParaMonteSamplerReturnItemContents("markovChain")`
+                                #' `r getDocParaMonteSamplerDescriptionEnding("markovChain")`
+                                #'
                                 readMarkovChain = function(file, delimiter, parseContents, renabled) {
                                     chainList = private$readchain( file = file, delimiter = delimiter, parseContents = parseContents, renabled = renabled )
                                 }
