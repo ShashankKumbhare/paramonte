@@ -148,7 +148,7 @@ class constructor.
 
 }}}
 }
-\section{\out{<br 1 />}}{
+\section{.}{
  \out{<hr>}
 }
 
@@ -164,7 +164,7 @@ class constructor.
 }
 }
 
-\section{\out{<br 2 />}}{
+\section{..}{
  \out{<hr>}
 }
 
@@ -248,7 +248,7 @@ to silence all output messages.
 }}}}}
 }
 
-\section{\out{<br 3 />}}{
+\section{...}{
  \out{<hr>}
 }
 
@@ -285,7 +285,7 @@ Returns a new \code{\link{ParaDRAM}} class object.
 }
 }
 
-\section{\out{<br 4 />}}{
+\section{....}{
  \out{<hr>}
 }
 
@@ -314,7 +314,7 @@ Returns a new \code{\link{ParaDRAM}} class object.
 }}
 }
 
-\section{\out{<br 5 />}}{
+\section{.....}{
  \out{<hr>}
 }
 
