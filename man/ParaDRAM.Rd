@@ -149,7 +149,7 @@ class constructor.
 }}}
 }
 \section{.}{
- \out{<hr>}
+ . \out{<hr>}
 }
 
 \section{Super class}{
@@ -165,7 +165,7 @@ class constructor.
 }
 
 \section{..}{
- \out{<hr>}
+ .. \out{<hr>}
 }
 
 \section{Public fields}{
@@ -249,7 +249,7 @@ to silence all output messages.
 }
 
 \section{...}{
- \out{<hr>}
+ ... \out{<hr>}
 }
 
 \section{Class constructor}{
@@ -286,7 +286,7 @@ Returns a new \code{\link{ParaDRAM}} class object.
 }
 
 \section{....}{
- \out{<hr>}
+ .... \out{<hr>}
 }
 
 \section{Methods}{
@@ -315,7 +315,7 @@ Returns a new \code{\link{ParaDRAM}} class object.
 }
 
 \section{.....}{
- \out{<hr>}
+ ..... \out{<hr>}
 }
 
 \section{Methods description}{
