@@ -2,3 +2,8 @@
 
 export(ParaDRAM)
 export(hello)
+import(ggplot2)
+import(grDevices)
+import(methods)
+import(tools)
+import(utils)

@@ -2,9 +2,9 @@
 ####################################################################################################################################
 ####################################################################################################################################
 # >>
-#' @title An [`R6`] `BasePlot` class for **[paramonte]** package usage
-#' @description This is the class for generating instances of basic plots with minimally one (X)-axis.
-#' It serves as the superclass for a wide variety of other multi-axes ParaMonte plots.
+# @title An [`R6`] `BasePlot` class for **[paramonte]** package usage
+# @description This is the class for generating instances of basic plots with minimally one (X)-axis.
+# It serves as the superclass for a wide variety of other multi-axes ParaMonte plots.
 # <<
 ####################################################################################################################################
 ####################################################################################################################################

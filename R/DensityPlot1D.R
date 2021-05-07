@@ -2,11 +2,11 @@
 ####################################################################################################################################
 ####################################################################################################################################
 # >>
-#' @title An [`R6`] `DensityPlot1D` class for **[paramonte]** package usage
-#' @description This is the DensityPlot1D class for generating instances of histogram figures
-#' in one dimension based on a wide range of plotting tools from the `ggplot`.\cr
-#' Normally, the public users are not supposed to use this class directly, although they can
-#' for the purposes other than plotting the ParaMonte simulation files.
+# @title An [`R6`] `DensityPlot1D` class for **[paramonte]** package usage
+# @description This is the DensityPlot1D class for generating instances of histogram figures
+# in one dimension based on a wide range of plotting tools from the `ggplot`.\cr
+# Normally, the public users are not supposed to use this class directly, although they can
+# for the purposes other than plotting the ParaMonte simulation files.
 # <<
 ####################################################################################################################################
 ####################################################################################################################################

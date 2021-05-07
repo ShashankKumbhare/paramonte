@@ -4,14 +4,37 @@
 \alias{ParaMonteSampler}
 \title{An \code{\link{R6}} \code{ParaMonteSampler} class for \link{paramonte} package usage}
 \description{
+\describe{\item{}{
+
 This is the \code{ParaMonteSampler} base class for the ParaMonte sampler routines. This class is NOT meant to be directly accessed or
 called by the user of the \link{paramonte} package. However, its children, such as the \code{\link{ParaDRAM}} sampler class will be directly
 accessible to the public.
+
+}}
 }
+\section{\out{<br 1 />}}{
+ \out{<hr>}
+}
+
+\section{Super class}{
+
+\itemize{
+\item \code{ParaMonteSampler} has no super class.
+}
+}
+
+\section{\out{<br 2 />}}{
+ \out{<hr>}
+}
+
 \section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{buildMode}}{optional string argument with the default value “release”. possible choices are:
+
+
+\describe{\item{}{\describe{\item{\code{\link{ParaMonteSampler}} \strong{fields}}{\describe{
+
+\item{\code{buildMode}}{
+
+optional string argument with the default value “release”. possible choices are:
 \itemize{
 \item “debug”
 
@@ -19,26 +42,38 @@ to be used for identifying sources of bug and causes of code crash.
 \item “release”
 
 to be used in all other normal scenarios for maximum runtime efficiency.
-}}
+}
 
-\item{\code{mpiEnabled}}{Optional logical (boolean) indicator which is \code{FALSE} by default.
+}
+
+\item{\code{mpiEnabled}}{
+
+Optional logical (boolean) indicator which is \code{FALSE} by default.
 
 If it is set to \code{TRUE}, it will cause the ParaMonte simulation to run in parallel on the requested
 number of processors.
 
 See the class documentation guidelines in the above for information on how to run a simulation in
-parallel.}
+parallel.
 
-\item{\code{inputFile}}{Optional string input representing the path to an external input namelist of simulation specifications.
+}
+
+\item{\code{inputFile}}{
+
+Optional string input representing the path to an external input namelist of simulation specifications.
 
 USE THIS OPTIONAL ARGUMENT WITH CAUTION AND ONLY IF YOU KNOW WHAT YOU ARE DOING.
-\subsection{WARNING:}{
+
+\strong{WARNING}
 
 Specifying an input file will cause the sampler to ignore all other simulation specifications set
 by the user via sampler instance's \code{spec}-component attributes.
-}}
 
-\item{\code{spec}}{An R list containing all simulation specifications.
+}
+
+\item{\code{spec}}{
+
+An R list containing all simulation specifications.
 
 All simulation attributes are by default set to appropriate values at runtime. To override the
 default simulation specifications, set the \code{spec} attributes to some desired values of your choice.
@@ -46,70 +81,119 @@ default simulation specifications, set the \code{spec} attributes to some desire
 If you need help on any of the simulation specifications, try the supplied \code{helpme()} function in
 this component.
 
-If you wish to reset some specifications to the default values, simply set them to \code{NULL}.}
+If you wish to reset some specifications to the default values, simply set them to \code{NULL}.
 
-\item{\code{reportEnabled}}{optional logical (boolean) indicator which is \code{TRUE} by default.
+}
+
+\item{\code{reportEnabled}}{
+
+optional logical (boolean) indicator which is \code{TRUE} by default.
 
 If it is set to \code{TRUE}, it will cause extensive guidelines to be printed on the standard output
 as the simulation or post-processing continues with hints on the next possible steps that could
 be taken in the process. If you do not need such help and information set this variable to \code{FALSE}
-to silence all output messages.}
-}
-\if{html}{\out{</div>}}
-}
-\section{Methods}{
-\subsection{Public methods}{
-\itemize{
-\item \href{#method-new}{\code{ParaMonteSampler$new()}}
-\item \href{#method-readChain}{\code{ParaMonteSampler$readChain()}}
-\item \href{#method-readSample}{\code{ParaMonteSampler$readSample()}}
-\item \href{#method-readReport}{\code{ParaMonteSampler$readReport()}}
-\item \href{#method-readRestart}{\code{ParaMonteSampler$readRestart()}}
-\item \href{#method-readProgress}{\code{ParaMonteSampler$readProgress()}}
-\item \href{#method-readMarkovChain}{\code{ParaMonteSampler$readMarkovChain()}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
-\subsection{Method \code{new()}}{
-Instantiates a \code{ParaMonteSampler} class object.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaMonteSampler$new(methodName)}\if{html}{\out{</div>}}
+to silence all output messages.
+
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{methodName}}{A string representing the name of the ParaMonte sampler that is to be instantiated.}
+}}}}}
 }
-\if{html}{\out{</div>}}
+
+\section{\out{<br 3 />}}{
+ \out{<hr>}
 }
-\subsection{Returns}{
+
+\section{Class constructor}{
+
+\subsection{Method \code{new()}}{
+
+\describe{\item{}{\describe{
+
+\item{\strong{Description}}{
+
+Instantiates a \code{ParaMonteSampler} class object.
+
+}
+
+\item{\strong{Usage}}{\preformatted{ParaMonteSampler$new( methodName )
+}
+
+}
+
+\item{\strong{Arguments}}{\describe{
+
+\item{\code{methodName}}{
+A string representing the name of the ParaMonte sampler that is to be instantiated.
+}
+
+}}
+
+\item{\strong{Returns}}{
+
 Returns a new \code{ParaMonteSampler} class object.
+
+}
+
+}}}
 }
 }
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readChain"></a>}}
-\if{latex}{\out{\hypertarget{method-readChain}{}}}
+
+\section{\out{<br 4 />}}{
+ \out{<hr>}
+}
+
+\section{Methods}{
+
+
+\describe{\item{}{ \code{\link{ParaMonteSampler}} \strong{methods}
+\itemize{
+\item \href{#method-readChain}{\code{ParaMonteSampler}$\code{readChain()}}
+\item \href{#method-readSample}{\code{ParaMonteSampler}$\code{readSample()}}
+\item \href{#method-readReport}{\code{ParaMonteSampler}$\code{readReport()}}
+\item \href{#method-readRestart}{\code{ParaMonteSampler}$\code{readRestart()}}
+\item \href{#method-readProgress}{\code{ParaMonteSampler}$\code{readProgress()}}
+\item \href{#method-readMarkovChain}{\code{ParaMonteSampler}$\code{readMarkovChain()}}
+}
+
+}}
+}
+
+\section{\out{<br 5 />}}{
+ \out{<hr>}
+}
+
+\section{Methods description}{
+
+
+\out{<a id="method-readChain"></a>}
 \subsection{Method \code{readChain()}}{
+
+\describe{\item{}{\describe{
+
+\item{\strong{Description}}{
+
 Return a list of the contents of a set of ParaDRAM output chain files whose names begin the user-provided input
 file prefix, or as specified by the input simulation specification \code{SAMPLER$spec$outputFileName}, where SAMPLER can be an instance
 of any one of the ParaMonte's sampler classes, such as \code{ParaDRAM}.
-\subsection{Note}{
+
+\strong{Note}
 \itemize{
 \item This method is to be only used for postprocessing of the output chain file(s) of an already finished ParaDRAM simulation.
 \item It is not meant to be called by all processes in parallel mode, although it is possible.
 }
-}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaMonteSampler$readChain(file, delimiter, parseContents, renabled)}\if{html}{\out{</div>}}
+
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{(optional)
+\item{\strong{Usage}}{\preformatted{ParaMonteSampler$readChain(file, delimiter, parseContents, renabled)
+}
+
+}
+
+\item{\strong{Arguments}}{\describe{
+
+\item{\code{file}}{
+
+(optional)
 
 A string representing the path to the chain file with the default value of \code{''}. The path only needs to  uniquely identify the
 name of the simulation to which the chain file belongs.
@@ -124,29 +208,44 @@ If the specified path is a URL, the file will be downloaded as a temporary file 
 and the file will be subsequently removed.
 
 If no input is specified via any of the possible routes, the method will search for any possible candidate file with the appropriate
-suffix in the current working directory.}
+suffix in the current working directory.
 
-\item{\code{delimiter}}{(optional)
+}
+
+\item{\code{delimiter}}{
+
+(optional)
 
 Optional input string representing the delimiter used in the output chain file. If it is not provided as input argument, the
 value of the corresponding object's \code{spec} attribute \code{outputDelimiter} will be used instead. If none of the two are available, the
-default comma delimiter \code{','} will be assumed and used.}
+default comma delimiter \code{','} will be assumed and used.
 
-\item{\code{parseContents}}{(optional)
+}
+
+\item{\code{parseContents}}{
+
+(optional)
 
 If set to \code{TRUE}, the contents of the chain file will be parsed and stored in a component of the object named \code{contents}.
 
-The default value is \code{TRUE}.}
+The default value is \code{TRUE}.
 
-\item{\code{renabled}}{(optional)
+}
+
+\item{\code{renabled}}{
+
+(optional)
 
 If set to \code{FALSE}, the contents of the file(s) will be stored as a list in a (new) component of the ParaDRAM object named \code{chainList}  and \code{NULL} will be the return value of the method. If set to \code{TRUE}, the reverse will done.
 
-The default value is \code{FALSE}.}
+The default value is \code{FALSE}.
+
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+
+}}
+
+\item{\strong{Returns}}{
+
 \code{chainList} (optional)
 
 An R list of \code{TabularFileContents} objects, each of which corresponds to the contents of a unique restart file. Each object has
@@ -179,29 +278,44 @@ object which contains the data stored in that column of the chain file. These pr
 
 If \code{renabled = TRUE}, the list of objects will be returned as the return value of the method. Otherwise, the list will be stored in
 a component of the ParaDRAM object named \code{chainList}.
+
 }
+
+}}}
+
+\out{<hr>}
+
+\out{<a id="method-readSample"></a>}
 }
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readSample"></a>}}
-\if{latex}{\out{\hypertarget{method-readSample}{}}}
+
 \subsection{Method \code{readSample()}}{
+
+\describe{\item{}{\describe{
+
+\item{\strong{Description}}{
+
 Return a list of the contents of a set of ParaDRAM output sample files whose names begin the user-provided input
 file prefix, or as specified by the input simulation specification \code{SAMPLER$spec$outputFileName}, where SAMPLER can be an instance
 of any one of the ParaMonte's sampler classes, such as \code{ParaDRAM}.
-\subsection{Note}{
+
+\strong{Note}
 \itemize{
 \item This method is to be only used for postprocessing of the output sample file(s) of an already finished ParaDRAM simulation.
 \item It is not meant to be called by all processes in parallel mode, although it is possible.
 }
-}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaMonteSampler$readSample(file, delimiter, parseContents, renabled)}\if{html}{\out{</div>}}
+
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{(optional)
+\item{\strong{Usage}}{\preformatted{ParaMonteSampler$readSample(file, delimiter, parseContents, renabled)
+}
+
+}
+
+\item{\strong{Arguments}}{\describe{
+
+\item{\code{file}}{
+
+(optional)
 
 A string representing the path to the sample file with the default value of \code{''}. The path only needs to  uniquely identify the
 name of the simulation to which the sample file belongs.
@@ -216,29 +330,44 @@ If the specified path is a URL, the file will be downloaded as a temporary file 
 and the file will be subsequently removed.
 
 If no input is specified via any of the possible routes, the method will search for any possible candidate file with the appropriate
-suffix in the current working directory.}
+suffix in the current working directory.
 
-\item{\code{delimiter}}{(optional)
+}
+
+\item{\code{delimiter}}{
+
+(optional)
 
 Optional input string representing the delimiter used in the output sample file. If it is not provided as input argument, the
 value of the corresponding object's \code{spec} attribute \code{outputDelimiter} will be used instead. If none of the two are available, the
-default comma delimiter \code{','} will be assumed and used.}
+default comma delimiter \code{','} will be assumed and used.
 
-\item{\code{parseContents}}{(optional)
+}
+
+\item{\code{parseContents}}{
+
+(optional)
 
 If set to \code{TRUE}, the contents of the sample file will be parsed and stored in a component of the object named \code{contents}.
 
-The default value is \code{TRUE}.}
+The default value is \code{TRUE}.
 
-\item{\code{renabled}}{(optional)
+}
+
+\item{\code{renabled}}{
+
+(optional)
 
 If set to \code{FALSE}, the contents of the file(s) will be stored as a list in a (new) component of the ParaDRAM object named \code{sampleList}  and \code{NULL} will be the return value of the method. If set to \code{TRUE}, the reverse will done.
 
-The default value is \code{FALSE}.}
+The default value is \code{FALSE}.
+
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+
+}}
+
+\item{\strong{Returns}}{
+
 \code{sampleList} (optional)
 
 An R list of \code{TabularFileContents} objects, each of which corresponds to the contents of a unique restart file. Each object has
@@ -271,29 +400,44 @@ object which contains the data stored in that column of the sample file. These p
 
 If \code{renabled = TRUE}, the list of objects will be returned as the return value of the method. Otherwise, the list will be stored in
 a component of the ParaDRAM object named \code{sampleList}.
+
 }
+
+}}}
+
+\out{<hr>}
+
+\out{<a id="method-readReport"></a>}
 }
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readReport"></a>}}
-\if{latex}{\out{\hypertarget{method-readReport}{}}}
+
 \subsection{Method \code{readReport()}}{
+
+\describe{\item{}{\describe{
+
+\item{\strong{Description}}{
+
 Return a list of the contents of a set of ParaDRAM output report files whose names begin the user-provided input
 file prefix, or as specified by the input simulation specification \code{SAMPLER$spec$outputFileName}, where SAMPLER can be an instance
 of any one of the ParaMonte's sampler classes, such as \code{ParaDRAM}.
-\subsection{Note}{
+
+\strong{Note}
 \itemize{
 \item This method is to be only used for postprocessing of the output report file(s) of an already finished ParaDRAM simulation.
 \item It is not meant to be called by all processes in parallel mode, although it is possible.
 }
-}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaMonteSampler$readReport(file, renabled)}\if{html}{\out{</div>}}
+
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{(optional)
+\item{\strong{Usage}}{\preformatted{ParaMonteSampler$readSample(file, renabled)
+}
+
+}
+
+\item{\strong{Arguments}}{\describe{
+
+\item{\code{file}}{
+
+(optional)
 
 A string representing the path to the report file with the default value of \code{''}. The path only needs to  uniquely identify the
 name of the simulation to which the report file belongs.
@@ -308,17 +452,24 @@ If the specified path is a URL, the file will be downloaded as a temporary file 
 and the file will be subsequently removed.
 
 If no input is specified via any of the possible routes, the method will search for any possible candidate file with the appropriate
-suffix in the current working directory.}
+suffix in the current working directory.
 
-\item{\code{renabled}}{(optional)
+}
+
+\item{\code{renabled}}{
+
+(optional)
 
 If set to \code{FALSE}, the contents of the file(s) will be stored as a list in a (new) component of the ParaDRAM object named \code{reportList}  and \code{NULL} will be the return value of the method. If set to \code{TRUE}, the reverse will done.
 
-The default value is \code{FALSE}.}
+The default value is \code{FALSE}.
+
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+
+}}
+
+\item{\strong{Returns}}{
+
 \code{reportList} (optional)
 
 An R list of \code{ReportFileContents} objects, each of which corresponds to the contents of a unique restart file. Each object has
@@ -336,40 +487,44 @@ object which contains the data stored in that column of the report file. These p
 
 If \code{renabled = TRUE}, the list of objects will be returned as the return value of the method. Otherwise, the list will be stored in
 a component of the ParaDRAM object named \code{reportList}.
+
 }
+
+}}}
+
+\out{<hr>}
+
+\out{<a id="method-readRestart"></a>}
 }
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readRestart"></a>}}
-\if{latex}{\out{\hypertarget{method-readRestart}{}}}
+
 \subsection{Method \code{readRestart()}}{
+
+\describe{\item{}{\describe{
+
+\item{\strong{Description}}{
+
 Return a list of the contents of a set of ParaDRAM output restart files whose names begin the user-provided input
 file prefix, or as specified by the input simulation specification \code{SAMPLER$spec$outputFileName}, where SAMPLER can be an instance
 of any one of the ParaMonte's sampler classes, such as \code{ParaDRAM}.
-\subsection{Note}{
+
+\strong{Note}
 \itemize{
 \item This method is to be only used for postprocessing of the output restart file(s) of an already finished ParaDRAM simulation.
 \item It is not meant to be called by all processes in parallel mode, although it is possible.
 }
+
 }
 
-\subsection{Warning}{
-\itemize{
-\item Only restart output files in \strong{ASCII format} can be read via this method. The binary restart files are NOT meant to be parsed
-via this method. To request for ASCII restart output files in simulations, set the input simulation specification
-
-\code{SAMPLER$spec$restartFileFormat = 'ascii'}
-
-where \code{SAMPLER} can be an instance of any one of the ParaMonte's sampler classes, such as \code{ParaDRAM}.
-}
-}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaMonteSampler$readRestart(file, renabled)}\if{html}{\out{</div>}}
+\item{\strong{Usage}}{\preformatted{ParaMonteSampler$readRestart(file, renabled)
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{(optional)
+}
+
+\item{\strong{Arguments}}{\describe{
+
+\item{\code{file}}{
+
+(optional)
 
 A string representing the path to the restart file with the default value of \code{''}. The path only needs to  uniquely identify the
 name of the simulation to which the restart file belongs.
@@ -384,17 +539,24 @@ If the specified path is a URL, the file will be downloaded as a temporary file 
 and the file will be subsequently removed.
 
 If no input is specified via any of the possible routes, the method will search for any possible candidate file with the appropriate
-suffix in the current working directory.}
+suffix in the current working directory.
 
-\item{\code{renabled}}{(optional)
+}
+
+\item{\code{renabled}}{
+
+(optional)
 
 If set to \code{FALSE}, the contents of the file(s) will be stored as a list in a (new) component of the ParaDRAM object named \code{restartList}  and \code{NULL} will be the return value of the method. If set to \code{TRUE}, the reverse will done.
 
-The default value is \code{FALSE}.}
+The default value is \code{FALSE}.
+
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+
+}}
+
+\item{\strong{Returns}}{
+
 \code{restartList} (optional)
 
 An R list of \code{RestartFileContents} objects, each of which corresponds to the contents of a unique restart file. Each object has
@@ -427,29 +589,44 @@ A list of entities names parsed from the , restart file.
 
 If \code{renabled = TRUE}, the list of objects will be returned as the return value of the method. Otherwise, the list will be stored in
 a component of the ParaDRAM object named \code{restartList}.
+
 }
+
+}}}
+
+\out{<hr>}
+
+\out{<a id="method-readProgress"></a>}
 }
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readProgress"></a>}}
-\if{latex}{\out{\hypertarget{method-readProgress}{}}}
+
 \subsection{Method \code{readProgress()}}{
+
+\describe{\item{}{\describe{
+
+\item{\strong{Description}}{
+
 Return a list of the contents of a set of ParaDRAM output progress files whose names begin the user-provided input
 file prefix, or as specified by the input simulation specification \code{SAMPLER$spec$outputFileName}, where SAMPLER can be an instance
 of any one of the ParaMonte's sampler classes, such as \code{ParaDRAM}.
-\subsection{Note}{
+
+\strong{Note}
 \itemize{
 \item This method is to be only used for postprocessing of the output progress file(s) of an already finished ParaDRAM simulation.
 \item It is not meant to be called by all processes in parallel mode, although it is possible.
 }
-}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaMonteSampler$readProgress(file, delimiter, parseContents, renabled)}\if{html}{\out{</div>}}
+
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{(optional)
+\item{\strong{Usage}}{\preformatted{ParaMonteSampler$readChain(file, delimiter, parseContents, renabled)
+}
+
+}
+
+\item{\strong{Arguments}}{\describe{
+
+\item{\code{file}}{
+
+(optional)
 
 A string representing the path to the progress file with the default value of \code{''}. The path only needs to  uniquely identify the
 name of the simulation to which the progress file belongs.
@@ -464,29 +641,44 @@ If the specified path is a URL, the file will be downloaded as a temporary file 
 and the file will be subsequently removed.
 
 If no input is specified via any of the possible routes, the method will search for any possible candidate file with the appropriate
-suffix in the current working directory.}
+suffix in the current working directory.
 
-\item{\code{delimiter}}{(optional)
+}
+
+\item{\code{delimiter}}{
+
+(optional)
 
 Optional input string representing the delimiter used in the output progress file. If it is not provided as input argument, the
 value of the corresponding object's \code{spec} attribute \code{outputDelimiter} will be used instead. If none of the two are available, the
-default comma delimiter \code{','} will be assumed and used.}
+default comma delimiter \code{','} will be assumed and used.
 
-\item{\code{parseContents}}{(optional)
+}
+
+\item{\code{parseContents}}{
+
+(optional)
 
 If set to \code{TRUE}, the contents of the progress file will be parsed and stored in a component of the object named \code{contents}.
 
-The default value is \code{TRUE}.}
+The default value is \code{TRUE}.
 
-\item{\code{renabled}}{(optional)
+}
+
+\item{\code{renabled}}{
+
+(optional)
 
 If set to \code{FALSE}, the contents of the file(s) will be stored as a list in a (new) component of the ParaDRAM object named \code{progressList}  and \code{NULL} will be the return value of the method. If set to \code{TRUE}, the reverse will done.
 
-The default value is \code{FALSE}.}
+The default value is \code{FALSE}.
+
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+
+}}
+
+\item{\strong{Returns}}{
+
 \code{progressList} (optional)
 
 An R list of \code{TabularFileContents} objects, each of which corresponds to the contents of a unique restart file. Each object has
@@ -516,29 +708,44 @@ object which contains the data stored in that column of the progress file. These
 
 If \code{renabled = TRUE}, the list of objects will be returned as the return value of the method. Otherwise, the list will be stored in
 a component of the ParaDRAM object named \code{progressList}.
+
 }
+
+}}}
+
+\out{<hr>}
+
+\out{<a id="method-readMarkovChain"></a>}
 }
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readMarkovChain"></a>}}
-\if{latex}{\out{\hypertarget{method-readMarkovChain}{}}}
+
 \subsection{Method \code{readMarkovChain()}}{
+
+\describe{\item{}{\describe{
+
+\item{\strong{Description}}{
+
 Return a list of the unweighted verbose (Markov-chain) contents of a set of ParaDRAM output markovChain files whose names begin the user-provided input
 file prefix, or as specified by the input simulation specification \code{SAMPLER$spec$outputFileName}, where SAMPLER can be an instance
 of any one of the ParaMonte's sampler classes, such as \code{ParaDRAM}.
-\subsection{Note}{
+
+\strong{Note}
 \itemize{
 \item This method is to be only used for postprocessing of the output markovChain file(s) of an already finished ParaDRAM simulation.
 \item It is not meant to be called by all processes in parallel mode, although it is possible.
 }
-}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ParaMonteSampler$readMarkovChain(file, delimiter, parseContents, renabled)}\if{html}{\out{</div>}}
+
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{(optional)
+\item{\strong{Usage}}{\preformatted{ParaMonteSampler$readMarkovChain(file, delimiter, parseContents, renabled)
+}
+
+}
+
+\item{\strong{Arguments}}{\describe{
+
+\item{\code{file}}{
+
+(optional)
 
 A string representing the path to the markovChain file with the default value of \code{''}. The path only needs to  uniquely identify the
 name of the simulation to which the markovChain file belongs.
@@ -553,29 +760,44 @@ If the specified path is a URL, the file will be downloaded as a temporary file 
 and the file will be subsequently removed.
 
 If no input is specified via any of the possible routes, the method will search for any possible candidate file with the appropriate
-suffix in the current working directory.}
+suffix in the current working directory.
 
-\item{\code{delimiter}}{(optional)
+}
+
+\item{\code{delimiter}}{
+
+(optional)
 
 Optional input string representing the delimiter used in the output markovChain file. If it is not provided as input argument, the
 value of the corresponding object's \code{spec} attribute \code{outputDelimiter} will be used instead. If none of the two are available, the
-default comma delimiter \code{','} will be assumed and used.}
+default comma delimiter \code{','} will be assumed and used.
 
-\item{\code{parseContents}}{(optional)
+}
+
+\item{\code{parseContents}}{
+
+(optional)
 
 If set to \code{TRUE}, the contents of the markovChain file will be parsed and stored in a component of the object named \code{contents}.
 
-The default value is \code{TRUE}.}
+The default value is \code{TRUE}.
 
-\item{\code{renabled}}{(optional)
+}
+
+\item{\code{renabled}}{
+
+(optional)
 
 If set to \code{FALSE}, the contents of the file(s) will be stored as a list in a (new) component of the ParaDRAM object named \code{markovChainList}  and \code{NULL} will be the return value of the method. If set to \code{TRUE}, the reverse will done.
 
-The default value is \code{FALSE}.}
+The default value is \code{FALSE}.
+
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+
+}}
+
+\item{\strong{Returns}}{
+
 \code{markovChainList} (optional)
 
 An R list of \code{TabularFileContents} objects, each of which corresponds to the contents of a unique restart file. Each object has
@@ -608,6 +830,12 @@ object which contains the data stored in that column of the markovChain file. Th
 
 If \code{renabled = TRUE}, the list of objects will be returned as the return value of the method. Otherwise, the list will be stored in
 a component of the ParaDRAM object named \code{markovChainList}.
+
+}
+
+}}}
+
+\out{<hr>}
 }
 }
-}
+

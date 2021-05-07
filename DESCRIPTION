@@ -26,7 +26,7 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Imports: 
-    R6, ggplot2, ggExtra, corrplot, mvtnorm, grDevices, methods, utils
+    R6, ggplot2, ggExtra, corrplot, mvtnorm, grDevices, methods, utils, stringr
 Collate:
     "0hello.R"
     "docParaMonteSampler.R"

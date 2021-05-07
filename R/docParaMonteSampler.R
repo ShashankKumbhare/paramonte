@@ -1,4 +1,52 @@
 
+docParaMonte = paste(readLines("C:/Users/Shashank/Dropbox/Projects/R-Interface/paramonteTestPackage20210420/paramonte/R/docParaMonteSampler.R"), collapse="\n")
+
+docTitle = "readReport"
+fileName = "docParaMonteSampler.R"
+
+# getDoc( fileName, docTitle )
+####################################################################################################################################
+################################## getDoc ##########################################################################################
+# >>
+getDoc = function( fileName, docTitle ){
+
+    filePath        = paste0( "C:/Users/Shashank/Dropbox/Projects/R-Interface/paramonteTestPackage20210420/paramonte/R/",
+                              fileName )
+
+    textAllLines    = readLines(filePath)
+
+    textAllLinesDoc = textAllLines[ startsWith(textAllLines, "#'") |
+                                    startsWith(textAllLines, docTitle) |
+                                    grepl( paste0("### ", docTitle, " ###"), textAllLines, fixed=TRUE) ]
+
+    textAllDoc      = paste(textAllLinesDoc, collapse="\n")
+
+    textBetweenDocTitle = stringr::str_match(  string  = textAllDoc,
+                                               pattern = paste0( "(?s)### ",
+                                                                 docTitle,
+                                                                 " (.*?)",
+                                                                 docTitle,
+                                                                 " =") )
+
+    textBetweenDocTitle = textBetweenDocTitle[,2]
+
+    textBetweenDocTitle = stringr::str_replace( textBetweenDocTitle, "(?s)#(.*?)@description", "" )
+
+    # textBetweenDocTitle = stringr::str_replace( textBetweenDocTitle, "(?s)#(.*?)#' ", "" )
+
+
+    textBetweenDocTitle = gsub( "#' ", "", textBetweenDocTitle, fixed = FALSE )
+    textBetweenDocTitle = gsub( "#'",  "", textBetweenDocTitle, fixed = FALSE )
+    # textBetweenDocTitle = gsub( "\\n",  paste0("\\\\cr "), textBetweenDocTitle, fixed = FALSE )
+
+    return( textBetweenDocTitle )
+
+}
+# <<
+################################## getDoc ##########################################################################################
+####################################################################################################################################
+
+
 ####################################################################################################################################
 ################################## getDocParaMonteSamplerDescriptionBeginning ######################################################
 # >>
@@ -13,9 +61,10 @@ Return a list of the", details, " contents of a set of ParaDRAM output ", type, 
 file prefix, or as specified by the input simulation specification `SAMPLER$spec$outputFileName`, where SAMPLER can be an instance
 of any one of the ParaMonte's sampler classes, such as `ParaDRAM`.
 
-### Note
+**Note**
 
 - This method is to be only used for postprocessing of the output ", type, " file(s) of an already finished ParaDRAM simulation.
+
 - It is not meant to be called by all processes in parallel mode, although it is possible.
 
                ")
@@ -35,7 +84,7 @@ getDocParaMonteSamplerDescriptionRestartWarning = function( ) {
 
   doc = paste0("
 
-### Warning
+**Warning**
 
 - Only restart output files in **ASCII format** can be read via this method. The binary restart files are NOT meant to be parsed
   via this method. To request for ASCII restart output files in simulations, set the input simulation specification
@@ -393,4 +442,142 @@ a component of the ParaDRAM object named `", type, "List`.
 }
 # <<
 ################################## getDocParaMonteSamplerReturnEnding ##############################################################
+####################################################################################################################################
+
+
+####################################################################################################################################
+################################## readChain #######################################################################################
+# >>
+#'
+#' @name readChain
+#'
+#' @title ``r methodName = "`readChain`"`` method for ``r className = "`ParaDRAM`"`` class objects for [paramonte] package
+#'
+#' @description
+#'
+#' `r methodName` is a method for objects of class [`r className`].
+#'
+#' click \href{../../paramonte/html/ParaDRAM.html#method-readChain}{here} for the documentation of [`r className`] class to see
+#' documentation of `r methodName`.
+#'
+#' @seealso [`readChain`] [`readSample`] [`readReport`] [`readRestart`] [`readProgress`] [`readMarkovChain`] [`ParaDRAM`]
+#'
+NULL
+# <<
+################################## readChain #######################################################################################
+####################################################################################################################################
+
+
+####################################################################################################################################
+################################## readSample ######################################################################################
+# >>
+#'
+#' @name readSample
+#'
+#' @title ``r methodName = "`readSample`"`` method for ``r className = "`ParaDRAM`"`` class objects for [paramonte] package
+#'
+#' @description
+#'
+#' `r methodName` is a method for objects of class [`r className`].
+#'
+#' click \href{../../paramonte/html/ParaDRAM.html#method-readChain}{here} for the documentation of [`r className`] class to see
+#' documentation of `r methodName`.
+#'
+#' @inherit readChain seealso
+#'
+NULL
+# <<
+################################## readSample ######################################################################################
+####################################################################################################################################
+
+
+####################################################################################################################################
+################################## readReport ######################################################################################
+# >>
+#'
+#' @name readReport
+#'
+#' @title ``r methodName = "`readReport`"`` method for ``r className = "`ParaDRAM`"`` class objects for [paramonte] package
+#'
+#' @description
+#'
+#' `r methodName` is a method for objects of class [`r className`].
+#'
+#' click \href{../../paramonte/html/ParaDRAM.html#method-readChain}{here} for the documentation of [`r className`] class to see
+#' documentation of `r methodName`.
+#'
+#' @inherit readChain seealso
+#'
+NULL
+# <<
+################################## readReport ######################################################################################
+####################################################################################################################################
+
+
+####################################################################################################################################
+################################## readRestart #####################################################################################
+# >>
+#'
+#' @name readRestart
+#'
+#' @title ``r methodName = "`readRestart`"`` method for ``r className = "`ParaDRAM`"`` class objects for [paramonte] package
+#'
+#' @description
+#'
+#' `r methodName` is a method for objects of class [`r className`].
+#'
+#' click \href{../../paramonte/html/ParaDRAM.html#method-readChain}{here} for the documentation of [`r className`] class to see
+#' documentation of `r methodName`.
+#'
+#' @inherit readChain seealso
+#'
+NULL
+# <<
+################################## readRestart #####################################################################################
+####################################################################################################################################
+
+
+####################################################################################################################################
+################################## readProgress ####################################################################################
+# >>
+#'
+#' @name readProgress
+#'
+#' @title ``r methodName = "`readProgress`"`` method for ``r className = "`ParaDRAM`"`` class objects for [paramonte] package
+#'
+#' @description
+#'
+#' `r methodName` is a method for objects of class [`r className`].
+#'
+#' click \href{../../paramonte/html/ParaDRAM.html#method-readChain}{here} for the documentation of [`r className`] class to see
+#' documentation of `r methodName`.
+#'
+#' @inherit readChain seealso
+#'
+NULL
+# <<
+################################## readProgress ####################################################################################
+####################################################################################################################################
+
+
+####################################################################################################################################
+################################## readMarkovChain #################################################################################
+# >>
+#'
+#' @name readMarkovChain
+#'
+#' @title ``r methodName = "`readMarkovChain`"`` method for ``r className = "`ParaDRAM`"`` class objects for [paramonte] package
+#'
+#' @description
+#'
+#' `r methodName` is a method for objects of class [`r className`].
+#'
+#' click \href{../../paramonte/html/ParaDRAM.html#method-readChain}{here} for the documentation of [`r className`] class to see
+#' documentation of `r methodName`.
+#'
+#' @inherit readChain seealso
+#'
+NULL
+# <<
+################################## readMarkovChain #################################################################################
 ####################################################################################################################################

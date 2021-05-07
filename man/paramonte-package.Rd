@@ -9,7 +9,7 @@
 This is the R interface to ParaMonte: Plain Powerful Parallel Monte Carlo library.
 }
 \details{
-\subsection{What is ParaMonte?}{
+\describe{\item{\emph{\strong{What is ParaMonte?}}}{
 
 ParaMonte is a serial / parallel library of Monte Carlo routines for sampling mathematical objective functions of arbitrary-
 dimensions, in particular, the posterior distributions of Bayesian models in data science, Machine Learning, and scientific
@@ -31,13 +31,16 @@ For the API documentation, visit:
 \itemize{
 \item \url{https://www.cdslab.org/paramonte/notes/api/python}
 }
-}
 
-\subsection{ParaMonte samplers}{
+}}
+
+\out{<hr>}
+
+\describe{\item{\emph{\strong{ParaMonte samplers}}}{
 
 The routines currently supported by the ParaMonte Python library include:
-\itemize{
-\item \strong{\link{ParaDRAM}}
+
+\describe{\item{\strong{\link{ParaDRAM}}}{
 
 Parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo Sampler. For a quick start, example scripts,
 and instructions on how to use the \link{ParaDRAM} sampler, type the following commands enclosed between the comment lines in your
@@ -48,9 +51,12 @@ help("ParaDRAM")           # the input value is case-insensitive
 or,\preformatted{pm = paramonte_class$new()
 ?ParaDRAM                  # get help on ParaDRAM sampler class
 }
-}
-}
 
+}}
+
+}}
+
+\out{<hr>}
 \subsection{Naming conventions}{
 \itemize{
 \item The camelCase naming style is used throughout the entire ParaMonte library, across all programming languages. The ParaMonte
@@ -64,6 +70,8 @@ single naming convention had to be used for all different languages.
 \item Significant attempt has been made to end all boolean variables with a passive verb, such that the full variable name virtually
 forms a proposition, that is, an English-language statement that should be either \code{TRUE} or \code{FALSE}, set by the user.
 }
+
+\out{<hr>}
 }
 
 \subsection{Tips}{
@@ -76,6 +84,8 @@ happen only scarcely.
 the simulation restart. This may be needed as Windows sometimes locks access to some or all of the simulation output files.
 \item To unset an already-set input simulation specification, simply set the simulation attribute to None or re-instantiate the sampler.
 }
+
+\out{<hr>}
 }
 }
 \seealso{

@@ -2,11 +2,11 @@
 ####################################################################################################################################
 ####################################################################################################################################
 # >>
-#' @title An [`R6`] `DensityPlot2D` class for **[paramonte]** package usage
-#' @description This is the DensityPlot2D class for generating instances of contour figures
-#' in two dimensions based on a wide range of plotting tools from the `ggplot`.\cr
-#' Normally, the public users are not supposed to use this class directly, although they can
-#' for the purposes other than plotting the ParaMonte simulation files.
+# @title An [`R6`] `DensityPlot2D` class for **[paramonte]** package usage
+# @description This is the DensityPlot2D class for generating instances of contour figures
+# in two dimensions based on a wide range of plotting tools from the `ggplot`.\cr
+# Normally, the public users are not supposed to use this class directly, although they can
+# for the purposes other than plotting the ParaMonte simulation files.
 # <<
 ####################################################################################################################################
 ####################################################################################################################################

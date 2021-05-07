@@ -1,3 +1,6 @@
+
+packageName = "paramonte"
+
 ####################################################################################################################################
 ################################## paramonte-package-doc ###########################################################################
 # >>
@@ -5,7 +8,7 @@
 #' @details
 #'
 #-----------------------------------------------------------------------------------------------------------------------------------
-#' ## What is ParaMonte?
+#' \describe{\item{_**What is ParaMonte?**_}{
 #-----------------------------------------------------------------------------------------------------------------------------------
 #'
 #' ParaMonte is a serial / parallel library of Monte Carlo routines for sampling mathematical objective functions of arbitrary-
@@ -26,13 +29,17 @@
 #'
 #' - <https://www.cdslab.org/paramonte/notes/api/python>
 #'
+#' }}
+#'
+#' \out{<hr>}
+#'
 #-----------------------------------------------------------------------------------------------------------------------------------
-#' ## ParaMonte samplers
+#' \describe{\item{_**ParaMonte samplers**_}{
 #-----------------------------------------------------------------------------------------------------------------------------------
 #'
 #' The routines currently supported by the ParaMonte Python library include:
 #'
-#' - **[ParaDRAM]**
+#'   \describe{\item{**[ParaDRAM]**}{
 #'
 #'   Parallel Delayed-Rejection Adaptive Metropolis-Hastings Markov Chain Monte Carlo Sampler. For a quick start, example scripts,
 #'   and instructions on how to use the [ParaDRAM] sampler, type the following commands enclosed between the comment lines in your
@@ -49,6 +56,12 @@
 #'   pm = paramonte_class$new()
 #'   ?ParaDRAM                  # get help on ParaDRAM sampler class
 #'   ````
+#'
+#'   }}
+#'
+#' }}
+#'
+#' \out{<hr>}
 #'
 #-----------------------------------------------------------------------------------------------------------------------------------
 #' ## Naming conventions
@@ -71,6 +84,8 @@
 #' - Significant attempt has been made to end all boolean variables with a passive verb, such that the full variable name virtually
 #'   forms a proposition, that is, an English-language statement that should be either `TRUE` or `FALSE`, set by the user.
 #'
+#' \out{<hr>}
+#'
 #-----------------------------------------------------------------------------------------------------------------------------------
 #' ## Tips
 #-----------------------------------------------------------------------------------------------------------------------------------
@@ -84,6 +99,8 @@
 #'   the simulation restart. This may be needed as Windows sometimes locks access to some or all of the simulation output files.
 #'
 #' - To unset an already-set input simulation specification, simply set the simulation attribute to None or re-instantiate the sampler.
+#'
+#' \out{<hr>}
 #'
 # <<
 ################################## paramonte-package-doc ###########################################################################
