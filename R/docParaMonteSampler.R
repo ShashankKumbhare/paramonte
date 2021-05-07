@@ -1,5 +1,5 @@
 
-docParaMonte = paste(readLines("C:/Users/Shashank/Dropbox/Projects/R-Interface/paramonteTestPackage20210420/paramonte/R/docParaMonteSampler.R"), collapse="\n")
+# docParaMonte = paste(readLines("C:/Users/Shashank/Dropbox/Projects/R-Interface/paramonteTestPackage20210420/paramonte/R/docParaMonteSampler.R"), collapse="\n")
 
 docTitle = "readReport"
 fileName = "docParaMonteSampler.R"
